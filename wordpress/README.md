@@ -1,1 +1,1 @@
-add "roles::wordpress" to app config in opsworks
+add "roles::wordpress" to app layer config in opsworks under "custom recipes"
