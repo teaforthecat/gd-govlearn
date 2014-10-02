@@ -1,0 +1,74 @@
+<?php
+
+        define('DB_NAME',     '<%= @database %>');
+        define('DB_USER',     '<%= @user %>');
+        define('DB_PASSWORD', '<%= @password %>');
+        define('DB_HOST',     '<%= @host %>');
+        define('DB_CHARSET', 'utf8');
+        define('DB_COLLATE', '');
+
+
+        /* Multisite */
+        define( 'WP_ALLOW_MULTISITE', true );
+
+        define('MULTISITE', true);
+        define('SUBDOMAIN_INSTALL', true);
+        if ( ! empty( $_ENV['DOMAIN_CURRENT_SITE'] ) ) {
+                define('DOMAIN_CURRENT_SITE', $_ENV['DOMAIN_CURRENT_SITE']);
+        } else {
+                define('DOMAIN_CURRENT_SITE', 'test-govlearn.govdelivery.com');
+        }
+        define('PATH_CURRENT_SITE', '/');
+        define('SITE_ID_CURRENT_SITE', 1);
+        define('BLOG_ID_CURRENT_SITE', 1);
+        define('SUNRISE', true);
+        define('WP_DEFAULT_THEME', 'govlearn');
+
+        /**#@+
+         * Authentication Unique Keys and Salts.
+         *
+         * Change these to different unique phrases!
+         * You can generate these using the {@link https://api.wordpress.org/secret-key/1.1/salt/ WordPress.org secret-key service}
+         * You can change these at any point in time to invalidate all existing cookies. This will force all users to have to log in again.
+         *
+         * @since 2.6.0
+         */
+        define('AUTH_KEY',         '9Y[DHGK+A^5tlMEGrB)gd$};DJpLeRs`h*Ogb3FU7hs=mQd3^#~N@&te~JD]%7wu');
+        define('SECURE_AUTH_KEY',  '_vlTyik]NaRi[sK:M|rB&5n&;z2P=#M]:s:dP~8Xz@S}6bV) Z7ow)kzI!BG9=c^');
+        define('LOGGED_IN_KEY',    'z+C&jT(dtXBi(Dk;kiglN7:`q`:gy3!z(:efRq^5 m3)PiWE>i-~fYhBp7gXhCPr');
+        define('NONCE_KEY',        '4}P`{^IP-q9l-MX5S,M{%@MI 6;T$&&XIbI:(03q}u/wPu#D#1ImnRTG:^v@pL=G');
+        define('AUTH_SALT',        '?8~=cQ5cm|23|_O0-C!|vIQ6/>cr+FODTOLbT-xFW3Z2PS[iYShfA>9p|PL:;hr(');
+        define('SECURE_AUTH_SALT', 'Sf |rs+PDDFU#>{ P_-(vTeTpsy+S/-et6^*gjv@.$Z;<EX?.8O*y:Wo<It(@z%$');
+        define('LOGGED_IN_SALT',   'f8Vb2W^FA|P[jE%sN|@Tf~^%9nS[jy{d/&_K9V)]F}(;.}<u$ORI5pBbEtP`17$,');
+        define('NONCE_SALT',       ',]=H017k_VPDLN%YsHZU}8s8<ewaW)V$}W:wc2nEG7JMxa*4]eC Z|BSaPAbl_fv');
+        /**#@-*/
+
+        // Disabling file editing
+
+        define('DISALLOW_FILE_EDIT', true);
+        /**
+         * WordPress Database Table prefix.
+         *
+         * You can have multiple installations in one database if you give each a unique
+         * prefix. Only numbers, letters, and underscores please!
+         */
+        $table_prefix  = 'wp_';
+
+        /**
+         * WordPress Localized Language, defaults to English.
+         *
+         * Change this to localize WordPress. A corresponding MO file for the chosen
+         * language must be installed to wp-content/languages. For example, install
+         * de_DE.mo to wp-content/languages and set WPLANG to 'de_DE' to enable German
+         * language support.
+         */
+        define('WPLANG', '');
+
+        /**
+         * For developers: WordPress debugging mode.
+         *
+         * Change this to true to enable the display of notices during development.
+         * It is strongly recommended that plugin and theme developers use WP_DEBUG
+         * in their development environments.
+         */
+        define('WP_DEBUG', false);
