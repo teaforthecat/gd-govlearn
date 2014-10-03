@@ -26,7 +26,7 @@ node[:deploy].each do |app_name, deploy|
 
       # Allow web server to create uploads
 
-      chmod +gw -R #{deploy[:deploy_to]}/current/wp-content/
+      chmod g+w -R #{deploy[:deploy_to]}/current/wp-content/uploads
     EOH
   end
 
