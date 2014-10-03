@@ -21,12 +21,14 @@ node[:deploy].each do |app_name, deploy|
     httpuser = "apache"
   end
 
-  bash 'set permissions' do
+  bash 'Allow web server to create uploads' do
+    upload_dir = "#{deploy[:deploy_to]}/shared/system/wp-content/uploads"
+    target_dir = "#{deploy[:deploy_to]}/current/wp-content/uploads"
+
     code <<-EOH
-
-      # Allow web server to create uploads
-
-      chmod g+w -R #{deploy[:deploy_to]}/current/wp-content/uploads
+      mkdir -p     #{upload_dir}
+      mkdir g+w -R #{upload_dir}
+      ln -sf       #{upload_dir} #{target_dir}
     EOH
   end
 
