@@ -21,11 +21,14 @@ node[:deploy].each do |app_name, deploy|
     httpuser = "apache"
   end
 
+  # Allow web server to create uploads
+  # TODO: move to the 'symlinks' var in the deploy cookbook attributes
   bash 'Allow web server to create uploads' do
     upload_dir = "#{deploy[:deploy_to]}/shared/system/wp-content/uploads"
     target_dir = "#{deploy[:deploy_to]}/current/wp-content/uploads"
 
     code <<-EOH
+      rm -rdf      #{target_dir}
       mkdir -p     #{upload_dir}
       mkdir g+w -R #{upload_dir}
       ln -sf       #{upload_dir} #{target_dir}
