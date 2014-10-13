@@ -30,7 +30,6 @@ node[:deploy].each do |app_name, deploy|
     code <<-EOH
       rm -rdf      #{target_dir}
       mkdir -p     #{upload_dir}
-      mkdir g+w -R #{upload_dir}
       ln -sf       #{upload_dir} #{target_dir}
     EOH
   end
