@@ -1,6 +1,7 @@
 # AWS OpsWorks Recipe for Wordpress to be executed during the Deploy lifecycle phase
 # - Creates the config file wp-config-local.php with MySQL data.
 # - Allows uploads from apache
+# - ensure {"wordpress": "domain_current_site" : x} is set on the stack's custom JSON
 
 node[:deploy].each do |app_name, deploy|
 
