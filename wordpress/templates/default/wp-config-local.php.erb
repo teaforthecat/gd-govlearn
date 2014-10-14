@@ -16,7 +16,7 @@
         if ( ! empty( $_ENV['DOMAIN_CURRENT_SITE'] ) ) {
                 define('DOMAIN_CURRENT_SITE', $_ENV['DOMAIN_CURRENT_SITE']);
         } else {
-                define('DOMAIN_CURRENT_SITE', 'test-govlearn.govdelivery.com');
+                define('DOMAIN_CURRENT_SITE', '<%= @domain_current_site %>');
         }
         define('PATH_CURRENT_SITE', '/');
         define('SITE_ID_CURRENT_SITE', 1);

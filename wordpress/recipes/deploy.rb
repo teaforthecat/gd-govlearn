@@ -44,7 +44,7 @@ node[:deploy].each do |app_name, deploy|
       :user       => db_user,
       :password   => db_password,
       :host       => db_host,
-      :keys       => (keys rescue nil)
+      :domain_current_site => node[:wordpress][:domain_current_site],
     )
   end
 
