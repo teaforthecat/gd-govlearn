@@ -10,3 +10,7 @@ firewall_rule 'http/https' do
   ports    [80, 443]
   action   :allow
 end
+
+firewall 'ufw' do
+  action :nothing
+end
